@@ -11,12 +11,12 @@ docker cli:
 ```shell
 # frps
 docker run \
-	-v /path/to/frps.ini:/etc/frps.ini \
+	-v /path/to/frps.ini:/frps.ini \
 	-p #what port you want to expose \
 	zen8841/frps
 #frpc
 docker run \
-	-v /path/to/frpc.ini:/etc/frpc.ini \
+	-v /path/to/frpc.ini:/frpc.ini \
 	zen8841/frpc
 ```
 You can put frps/frpc into same folder as Dockerfile to build your own frps/frpc docker image
