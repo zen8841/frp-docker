@@ -1,3 +1,4 @@
+name: Generate and push image
 on:
   push:
     paths:
