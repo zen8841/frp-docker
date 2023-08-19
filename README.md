@@ -1,4 +1,4 @@
-# frpc-docker
+# frp-docker
 A simple [frp](https://github.com/fatedier/frp) client docker image
 
 GitHub [zen8841/frp-docker](https://github.com/zen8841/frp-docker)
