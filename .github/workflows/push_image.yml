@@ -1,0 +1,10 @@
+on:
+  push:
+    paths:
+      - 'frp-latest-version.txt'
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test
+        run: echo "run ok"     
