@@ -41,24 +41,18 @@ jobs:
           curl -s https://api.github.com/repos/fatedier/frp/releases/latest | grep "browser_download_url.*_linux_amd64.tar.gz" | cut -d '"' -f 4 | wget -qi - && tar -xzf frp_*
           cp frp_*/frps ./frps/
           cp frp_*/frpc ./frpc/
-          echo "VERSION=$(<frp-latest-version.txt)" >> "$GITHUB_ENV"
           
-      - name: build the image
+      - name: build and push the image
         run: |
+          VERSION=$(<frp-latest-version.txt)"
           docker build ./frps -t zen8841/frpc:$VERSION
           docker build ./frpc -t zen8841/frpc:$VERSION
-          
-      - name: tag the image
-        run: |
           docker image tag zen8841/frps:$VERSION zen8841/frps:latest
           docker image tag zen8841/frpc:$VERSION zen8841/frpc:latest
           docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:$VERSION
           docker image tag zen8841/frpc:$VERSION ghcr.io/zen8841/frpc:$VERSION
           docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
           docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
-
-      - name: push image
-        run: |
           docker push --all-tags zen8841/frps
           docker push --all-tags zen8841/frpc
           docker push --all-tags ghcr.io/zen8841/frps
