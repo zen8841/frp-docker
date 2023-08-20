@@ -39,6 +39,7 @@ jobs:
       - name: build the image
         run: |
           VERSION=$(<frp-latest-version.txt)
+          echo $VERSION
           docker build ./frps -t zen8841/frpc:$VERSION
           docker build ./frpc -t zen8841/frpc:$VERSION
           
