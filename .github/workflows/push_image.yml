@@ -1,5 +1,6 @@
 name: Generate and push image
 on:
+  workflow_dispatch:
   push:
     paths:
       - 'frp-latest-version.txt'
