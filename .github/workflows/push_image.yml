@@ -51,8 +51,8 @@ jobs:
           
       - name: tag the image
         run: |
-          docker image tag zen8841/frps:$VERION zen8841/frps:latest
-          docker image tag zen8841/frpc:$VERION zen8841/frpc:latest
+          docker image tag zen8841/frps:$VERSION zen8841/frps:latest
+          docker image tag zen8841/frpc:$VERSION zen8841/frpc:latest
           docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:$VERSION
           docker image tag zen8841/frpc:$VERSION ghcr.io/zen8841/frpc:$VERSION
           docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
