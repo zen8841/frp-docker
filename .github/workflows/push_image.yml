@@ -44,7 +44,7 @@ jobs:
           
       - name: build and push the image
         run: |
-          VERSION=$(<frp-latest-version.txt)"
+          VERSION=$(<frp-latest-version.txt)
           docker build ./frps -t zen8841/frpc:$VERSION
           docker build ./frpc -t zen8841/frpc:$VERSION
           docker image tag zen8841/frps:$VERSION zen8841/frps:latest
