@@ -41,7 +41,7 @@ jobs:
           curl -s https://api.github.com/repos/fatedier/frp/releases/latest | grep "browser_download_url.*_linux_amd64.tar.gz" | cut -d '"' -f 4 | wget -qi - && tar -xzf frp_*
           cp frp_*/frps ./frps/
           cp frp_*/frpc ./frpc/
-          echo "VERSION=S(<frp-latest-version.txt)" >> "$GITHUB_ENV"
+          echo "VERSION=$(<frp-latest-version.txt)" >> "$GITHUB_ENV"
           
       - name: build the image
         run: |
