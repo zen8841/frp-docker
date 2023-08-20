@@ -11,7 +11,7 @@ jobs:
           token: ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       - name: Fetch release version
         run: |
-          curl -sL https://api.github.com/repos/zen8841/test/releases/latest | \
+          curl -sL https://api.github.com/repos/fatedier/frp/releases/latest | \
           jq -r ".tag_name" > frp-latest-version.txt
       - name: Check for modified files
         id: git-check
