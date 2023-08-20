@@ -36,6 +36,12 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: download source file
+        run: |
+          curl -s https://api.github.com/repos/fatedier/frp/releases/latest | grep "browser_download_url.*_linux_amd64.tar.gz" | cut -d '"' -f 4 | wget -qi - && tar -xzf frp_*
+          cp frp_*/frps ./frps/
+          cp frp_*/frpc ./frpc/
+          
       - name: build the image
         run: |
           VERSION=$(<frp-latest-version.txt)
