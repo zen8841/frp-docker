@@ -44,7 +44,7 @@ jobs:
           
       - name: build the image
         run: |
-          echo "VERSION=S(<frp-latest-version.txt)" >> >> "$GITHUB_ENV"
+          echo "VERSION=S(<frp-latest-version.txt)" >> "$GITHUB_ENV"
           docker build ./frps -t zen8841/frpc:$VERSION
           docker build ./frpc -t zen8841/frpc:$VERSION
           
