@@ -47,13 +47,13 @@ jobs:
           VERSION=$(<frp-latest-version.txt)
           docker build ./frps -t zen8841/frpc:$VERSION
           docker build ./frpc -t zen8841/frpc:$VERSION
-          docker image tag zen8841/frps:$VERSION zen8841/frps:latest
-          docker image tag zen8841/frpc:$VERSION zen8841/frpc:latest
-          docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:$VERSION
-          docker image tag zen8841/frpc:$VERSION ghcr.io/zen8841/frpc:$VERSION
-          docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
-          docker image tag zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
-          docker push --all-tags zen8841/frps
-          docker push --all-tags zen8841/frpc
+          docker image tag docker.io/zen8841/frps:$VERSION zen8841/frps:latest
+          docker image tag docker.io/zen8841/frpc:$VERSION zen8841/frpc:latest
+          docker image tag docker.io/zen8841/frps:$VERSION ghcr.io/zen8841/frps:$VERSION
+          docker image tag docker.io/zen8841/frpc:$VERSION ghcr.io/zen8841/frpc:$VERSION
+          docker image tag docker.io/zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
+          docker image tag docker.io/zen8841/frps:$VERSION ghcr.io/zen8841/frps:latest
+          docker push --all-tags docker.io/zen8841/frps
+          docker push --all-tags docker.io/zen8841/frpc
           docker push --all-tags ghcr.io/zen8841/frps
           docker push --all-tags ghcr.io/zen8841/frpc
