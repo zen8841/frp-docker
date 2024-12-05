@@ -16,7 +16,7 @@ docker image tag zen8841/frpc:$version ghcr.io/zen8841/frpc:$version
 docker image tag zen8841/frps:$version ghcr.io/zen8841/frps:latest
 docker image tag zen8841/frpc:$version ghcr.io/zen8841/frpc:latest
 docker push --all-tags zen8841/frps
-docker push --all-tags  zen8841/frpc:latest
+docker push --all-tags  zen8841/frpc
 docker push --all-tags ghcr.io/zen8841/frps
 docker push --all-tags ghcr.io/zen8841/frpc
 docker image rm zen8841/frpc:latest zen8841/frpc:$version ghcr.io/zen8841/frpc:latest ghcr.io/zen8841/frpc:$version zen8841/frps:latest zen8841/frps:$version ghcr.io/zen8841/frps:latest ghcr.io/zen8841/frps:$version busybox

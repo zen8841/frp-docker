@@ -1,4 +1,4 @@
 FROM scratch
-MAINTAINER zen8841 <zen.8841@gmail.com>
+LABEL org.opencontainers.image.authors="zen.8841@gmail.com"
 COPY ./frps /frps
-CMD ["/frps", "-c", "/frps.ini"]
+CMD ["/frps", "-c", "/frps.toml"]
